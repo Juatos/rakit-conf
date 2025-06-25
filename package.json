@@ -27,29 +27,32 @@
   },
   "author": "juatos <juatos@proton.me>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
-    "./eslint": {
-      "types": "./dist/eslint/index.d.ts",
-      "import": "./dist/eslint/index.js"
-    },
-    "./tsconfig/*": "./dist/tsconfig/*",
-    "./viteconf/*": "./dist/viteconf/*"
+    "./tsconfig/*": "./src/tsconfig/*",
+    "./eslint": "./dist/eslint.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/tsconfig"
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsup",
-    "dev": "tsup --watch",
-    "prepublishOnly": "pnpm build"
+    "dev": "vite",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.13.2",
@@ -62,13 +65,16 @@
     "unplugin-vue-components": "^28.7.0",
     "vite-plugin-dts": "^4.5.4"
   },
+  "peerDependencies": {
+    "vue": "^3.0.0",
+    "naive-ui": "^2.0.0",
+    "vite": "^6.0.0",
+    "typescript": "^5.0.0"
+  },
   "devDependencies": {
     "@types/node": "^24.0.3",
-    "tsup": "^8.3.0",
-    "typescript": "^5.8.3"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }
