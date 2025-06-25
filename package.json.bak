@@ -1,0 +1,80 @@
+{
+  "name": "@juatos/shared-conf",
+  "type": "module",
+  "version": "0.1.5",
+  "private": false,
+  "packageManager": "pnpm@10.12.2",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "description": "Vue 3 项目的共享配置库，提供 Vite 构建配置和 TypeScript 配置模板",
+  "keywords": [
+    "vue3",
+    "vite",
+    "typescript",
+    "config",
+    "shared",
+    "build-tools"
+  ],
+  "homepage": "https://github.com/Juatos/smart-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juatos/smart-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Juatos/smart-config/issues"
+  },
+  "author": "juatos",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tsconfig/*": "./src/tsconfig/*",
+    "./eslint": "./dist/eslint.js"
+  },
+  "files": [
+    "dist",
+    "src/tsconfig"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "vite",
+    "clean": "rm -rf dist",
+    "build": "tsup",
+    "prepublishOnly": "pnpm run build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^4.13.2",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "eslint": "^9.27.0",
+    "radash": "^12.1.1",
+    "terser": "^5.43.1",
+    "unocss": "^66.2.3",
+    "unplugin-auto-import": "^19.3.0",
+    "unplugin-vue-components": "^28.7.0",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0",
+    "naive-ui": "^2.0.0",
+    "vite": "^6.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+} 

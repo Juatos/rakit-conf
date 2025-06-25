@@ -1,0 +1,74 @@
+{
+  "name": "@rakit/conf",
+  "type": "module",
+  "version": "1.0.0",
+  "private": false,
+  "packageManager": "pnpm@10.12.2",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "description": "Rakit shared configuration for Vue 3 projects",
+  "keywords": [
+    "vue3",
+    "vite",
+    "eslint",
+    "typescript",
+    "unocss",
+    "configuration"
+  ],
+  "homepage": "https://github.com/Juatos/rakit-conf",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Juatos/rakit-conf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Juatos/rakit-conf/issues"
+  },
+  "author": "juatos <juatos@proton.me>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./eslint": {
+      "types": "./dist/eslint/index.d.ts",
+      "import": "./dist/eslint/index.js"
+    },
+    "./tsconfig/*": "./dist/tsconfig/*",
+    "./viteconf/*": "./dist/viteconf/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^4.13.2",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "eslint": "^9.27.0",
+    "radash": "^12.1.1",
+    "terser": "^5.43.1",
+    "unocss": "^66.2.3",
+    "unplugin-auto-import": "^19.3.0",
+    "unplugin-vue-components": "^28.7.0",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.8.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
