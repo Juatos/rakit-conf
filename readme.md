@@ -1,11 +1,11 @@
-# @juatos/shared-conf
+# @rakit/conf
 
 Vue 3 项目的共享配置库，提供 Vite 构建配置和 TypeScript 配置模板。
 
 ## 📦 安装
 
 ```bash
-pnpm add @juatos/shared-conf -D
+pnpm add @rakit/conf -D
 ```
 
 > **注意**: 本项目强制使用 pnpm 作为包管理器
@@ -17,7 +17,7 @@ pnpm add @juatos/shared-conf -D
 在你的 `vite.config.ts` 中使用：
 
 ```typescript
-import { defineConfig } from "@juatos/shared-conf"
+import { defineConfig } from "@rakit/conf"
 
 export default defineConfig({
   root: import.meta.dirname,
@@ -42,7 +42,7 @@ export default defineConfig({
 
 ```json
 {
-  "extends": "@juatos/shared-conf/tsconfig/app.json",
+  "extends": "@rakit/conf/tsconfig/app.json",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
@@ -75,14 +75,14 @@ export default defineConfig({
 ### 应用项目配置
 ```json
 {
-  "extends": "@juatos/shared-conf/tsconfig/app.json"
+  "extends": "@rakit/conf/tsconfig/app.json"
 }
 ```
 
 ### 库项目配置
 ```json
 {
-  "extends": "@juatos/shared-conf/tsconfig/library.json"
+  "extends": "@rakit/conf/tsconfig/library.json"
 }
 ```
 
