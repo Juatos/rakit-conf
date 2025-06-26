@@ -30,5 +30,21 @@ export default defineConfig([
     format: ["esm"],
     // 目标环境
     target: "es2020",
+  },
+  {
+    // admin 解析器
+    entry: {
+      "admin/resolver": "src/admin/resolver.ts"
+    },
+    // 生成类型声明文件
+    dts: true,
+    // 不代码拆分
+    splitting: false,
+    // 不清理输出目录
+    clean: false,
+    // 输出格式
+    format: ["cjs", "esm"],
+    // 目标环境
+    target: "es2020",
   }
 ])
