@@ -9,7 +9,7 @@ export interface PluginsOptions {
   unocss?: string | boolean | null
 
   /** 自动导入插件配置，可以是额外导入模块数组或 true(默认导入) 或 null(禁用) */
-  autoImport?: string[] | boolean | null
+  autoImport?: any[] | boolean | null
 
   /** 组件自动注册插件配置，可以是 true(默认组件) 或 null(禁用) */
   components?: boolean | null
