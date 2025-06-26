@@ -1,1 +1,1 @@
-export * from "./viteconf/index" 
+// ESLint 配置通过单独入口导出，不在主入口 

@@ -36,7 +36,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./tsconfig/*": "./src/tsconfig/*",
+    "./tsconfig.app.json": "./src/tsconfig/app.json",
+    "./tsconfig.lib.json": "./src/tsconfig/libiary.json",
     "./eslint": "./dist/eslint.js"
   },
   "files": [
